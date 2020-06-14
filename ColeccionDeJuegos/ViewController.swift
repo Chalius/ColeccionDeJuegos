@@ -11,9 +11,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        //let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let juego = juegos[indexPath.row]
         cell.textLabel?.text = juego.titulo
+        cell.detailTextLabel?.text = juego.categoria
         if(juego.imagen != nil){
             cell.imageView?.image = UIImage(data: (juego.imagen!))
         }
@@ -81,7 +83,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.isEditing = true
+        tableView.isEditing = true // si esto esta descomentado no se puede actualizar pero se puede mover
     }
 
 

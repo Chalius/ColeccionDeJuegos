@@ -18,6 +18,32 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OYK-Xp-hVG">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="GJO-Nt-cn3" detailTextLabel="K2v-BX-RO7" style="IBUITableViewCellStyleSubtitle" id="OnL-w4-s44">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OnL-w4-s44" id="lUl-9j-llR">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GJO-Nt-cn3">
+                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K2v-BX-RO7">
+                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -68,45 +94,45 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hrm-xJ-0JC">
-                                <rect key="frame" x="179.5" y="344" width="55" height="30"/>
+                                <rect key="frame" x="179.5" y="654" width="55" height="30"/>
                                 <state key="normal" title="Agregar"/>
                                 <connections>
                                     <action selector="agregarTapped:" destination="9K4-gu-kbV" eventType="touchUpInside" id="pAg-nQ-eR0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nR-P6-U5F">
-                                <rect key="frame" x="179.5" y="389" width="55" height="30"/>
-                                <state key="normal" title="Eliminar"/>
-                                <connections>
-                                    <action selector="eliminarTapped:" destination="9K4-gu-kbV" eventType="touchUpInside" id="8WX-Hu-lDI"/>
-                                </connections>
-                            </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajH-4S-MYt">
-                                <rect key="frame" x="47" y="488" width="320" height="216"/>
+                                <rect key="frame" x="47" y="388" width="320" height="216"/>
                             </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Seleccione una categoría" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vh0-F2-hVc">
-                                <rect key="frame" x="67" y="444" width="280" height="34"/>
+                                <rect key="frame" x="67" y="344" width="280" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="9ci-ZW-Gna"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nR-P6-U5F">
+                                <rect key="frame" x="179.5" y="699" width="55" height="30"/>
+                                <state key="normal" title="Eliminar"/>
+                                <connections>
+                                    <action selector="eliminarTapped:" destination="9K4-gu-kbV" eventType="touchUpInside" id="8WX-Hu-lDI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Hrm-xJ-0JC" firstAttribute="top" secondItem="ajH-4S-MYt" secondAttribute="bottom" constant="50" id="0mv-dq-Iwq"/>
                             <constraint firstItem="Lbh-4X-Zhu" firstAttribute="top" secondItem="HVL-3X-tct" secondAttribute="top" constant="32" id="1bH-30-cMR"/>
                             <constraint firstItem="6nR-P6-U5F" firstAttribute="top" secondItem="Hrm-xJ-0JC" secondAttribute="bottom" constant="15" id="7oH-rk-Qsy"/>
                             <constraint firstItem="Cur-nB-2hT" firstAttribute="top" secondItem="Lbh-4X-Zhu" secondAttribute="bottom" constant="20" id="8JK-Mc-XP7"/>
                             <constraint firstItem="6nR-P6-U5F" firstAttribute="centerX" secondItem="WEB-Vo-rTf" secondAttribute="centerX" id="OAR-av-K68"/>
-                            <constraint firstItem="vh0-F2-hVc" firstAttribute="top" secondItem="6nR-P6-U5F" secondAttribute="bottom" constant="25" id="Qg3-fg-hG5"/>
                             <constraint firstItem="vh0-F2-hVc" firstAttribute="centerX" secondItem="WEB-Vo-rTf" secondAttribute="centerX" id="WvO-Ui-7bo"/>
                             <constraint firstItem="ajH-4S-MYt" firstAttribute="top" secondItem="vh0-F2-hVc" secondAttribute="bottom" constant="10" id="X48-W3-KbM"/>
+                            <constraint firstItem="vh0-F2-hVc" firstAttribute="top" secondItem="Cur-nB-2hT" secondAttribute="bottom" constant="20" id="eZz-aV-qN7"/>
                             <constraint firstItem="Lbh-4X-Zhu" firstAttribute="centerX" secondItem="WEB-Vo-rTf" secondAttribute="centerX" id="f9h-Nn-JDw"/>
                             <constraint firstItem="Hrm-xJ-0JC" firstAttribute="centerX" secondItem="WEB-Vo-rTf" secondAttribute="centerX" id="hV0-1H-Xme"/>
                             <constraint firstItem="Cur-nB-2hT" firstAttribute="centerX" secondItem="WEB-Vo-rTf" secondAttribute="centerX" id="oVr-eE-sRh"/>
                             <constraint firstItem="ajH-4S-MYt" firstAttribute="centerX" secondItem="WEB-Vo-rTf" secondAttribute="centerX" id="pSf-aa-bUL"/>
-                            <constraint firstItem="Hrm-xJ-0JC" firstAttribute="top" secondItem="Cur-nB-2hT" secondAttribute="bottom" constant="20" id="z0E-Tf-NJF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HVL-3X-tct"/>
                     </view>

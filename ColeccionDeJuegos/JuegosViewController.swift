@@ -29,11 +29,22 @@ class JuegosViewController: UIViewController, UIImagePickerControllerDelegate, U
         if juego != nil{
             juego!.titulo! = tituloTextField.text!
             juego!.imagen = JuegoImageView.image?.jpegData(compressionQuality: 0.50)
+            
+            // category:
+            if let nuevo_juego = juego!.categoria {
+                juego!.categoria! = categoryInput.text!
+            }else{
+                juego!.categoria = categoryInput.text
+            }
         }else{
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             let juego = Juego(context: context)
             juego.titulo = tituloTextField.text
             juego.imagen = JuegoImageView.image?.jpegData(compressionQuality: 0.50)
+            
+            // category:
+            juego.categoria = categoryInput.text
+            
         }
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController?.popViewController(animated: true)
