@@ -81,6 +81,17 @@
                                     <action selector="eliminarTapped:" destination="9K4-gu-kbV" eventType="touchUpInside" id="8WX-Hu-lDI"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajH-4S-MYt">
+                                <rect key="frame" x="47" y="488" width="320" height="216"/>
+                            </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Seleccione una categoría" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vh0-F2-hVc">
+                                <rect key="frame" x="67" y="444" width="280" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="9ci-ZW-Gna"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -88,9 +99,13 @@
                             <constraint firstItem="6nR-P6-U5F" firstAttribute="top" secondItem="Hrm-xJ-0JC" secondAttribute="bottom" constant="15" id="7oH-rk-Qsy"/>
                             <constraint firstItem="Cur-nB-2hT" firstAttribute="top" secondItem="Lbh-4X-Zhu" secondAttribute="bottom" constant="20" id="8JK-Mc-XP7"/>
                             <constraint firstItem="6nR-P6-U5F" firstAttribute="centerX" secondItem="WEB-Vo-rTf" secondAttribute="centerX" id="OAR-av-K68"/>
+                            <constraint firstItem="vh0-F2-hVc" firstAttribute="top" secondItem="6nR-P6-U5F" secondAttribute="bottom" constant="25" id="Qg3-fg-hG5"/>
+                            <constraint firstItem="vh0-F2-hVc" firstAttribute="centerX" secondItem="WEB-Vo-rTf" secondAttribute="centerX" id="WvO-Ui-7bo"/>
+                            <constraint firstItem="ajH-4S-MYt" firstAttribute="top" secondItem="vh0-F2-hVc" secondAttribute="bottom" constant="10" id="X48-W3-KbM"/>
                             <constraint firstItem="Lbh-4X-Zhu" firstAttribute="centerX" secondItem="WEB-Vo-rTf" secondAttribute="centerX" id="f9h-Nn-JDw"/>
                             <constraint firstItem="Hrm-xJ-0JC" firstAttribute="centerX" secondItem="WEB-Vo-rTf" secondAttribute="centerX" id="hV0-1H-Xme"/>
                             <constraint firstItem="Cur-nB-2hT" firstAttribute="centerX" secondItem="WEB-Vo-rTf" secondAttribute="centerX" id="oVr-eE-sRh"/>
+                            <constraint firstItem="ajH-4S-MYt" firstAttribute="centerX" secondItem="WEB-Vo-rTf" secondAttribute="centerX" id="pSf-aa-bUL"/>
                             <constraint firstItem="Hrm-xJ-0JC" firstAttribute="top" secondItem="Cur-nB-2hT" secondAttribute="bottom" constant="20" id="z0E-Tf-NJF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HVL-3X-tct"/>
@@ -112,6 +127,8 @@
                     <connections>
                         <outlet property="JuegoImageView" destination="Lbh-4X-Zhu" id="rWb-99-8Ug"/>
                         <outlet property="agregarActualizarBoton" destination="Hrm-xJ-0JC" id="fM3-Ra-dgC"/>
+                        <outlet property="categoryInput" destination="vh0-F2-hVc" id="3nv-ct-p8V"/>
+                        <outlet property="dropDownCategory" destination="ajH-4S-MYt" id="ryl-ZK-la9"/>
                         <outlet property="eliminarBoton" destination="6nR-P6-U5F" id="iBE-Px-VPF"/>
                         <outlet property="tituloTextField" destination="Cur-nB-2hT" id="7XA-Gi-zqU"/>
                     </connections>

@@ -1,7 +1,7 @@
 
 import UIKit
 
-class JuegosViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class JuegosViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate  {
     
     @IBOutlet weak var JuegoImageView: UIImageView!
     @IBOutlet weak var tituloTextField: UITextField!
@@ -58,12 +58,58 @@ class JuegosViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     
+    // probando combo input
+    
+    @IBOutlet weak var categoryInput: UITextField!
+    @IBOutlet weak var dropDownCategory: UIPickerView!
+    var list = ["Acción", "Aventura", "Puzzle","rol","MMORPG"]
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+           return 1
+       }
+       
+   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return list.count
+   }
+       
+   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+
+       self.view.endEditing(true)
+       return list[row]
+   }
+
+   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
+       self.categoryInput.text = self.list[row]
+       //self.dropDownCategory.isHidden = true
+   }
+
+   func textFieldDidBeginEditing(_ textField: UITextField) {
+
+       if textField == self.categoryInput {
+           self.dropDownCategory.isHidden = false
+           //if you don't want the users to se the keyboard type:
+
+           textField.endEditing(true)
+       }
+   }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker.delegate = self
-        
         if juego != nil{
             JuegoImageView.image = UIImage(data:(juego!.imagen!) as Data)
             tituloTextField.text = juego!.titulo
@@ -72,6 +118,11 @@ class JuegosViewController: UIViewController, UIImagePickerControllerDelegate, U
         }else{
             eliminarBoton.isHidden = true
         }
+        
+        
+        self.dropDownCategory.delegate = self
+        self.dropDownCategory.dataSource = self
+        
     }
     
 
